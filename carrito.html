@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone - Nosotros</title>
+    <link rel="stylesheet" href="inicio.css">
+    <link rel="icon" href="Img/Logo.jpeg" type="image/jpeg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+</head>
+<body>
+    <!-- Encabezado de la página -->
+    <header>
+        <div class="container">
+            <h1>GameZone</h1>
+            <br>
+            <nav>
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+       <!--  <style>
+        .productos {
+            display: flex;
+            flex-wrap: wrap;
+          }
+          .producto {
+            border: 1px solid #000;
+            margin: 10px;
+            padding: 10px;
+          }
+          </style> -->
+          </head>
+          <body>
+          
+          <div class="productos" id="lista-productos">
+            <!-- Los productos se generarán aquí mediante JavaScript -->
+          </div>
+          
+          <h2>Carrito</h2>
+          <div id="carrito" class="carrito">
+            <!-- Los items del carrito se listarán aquí -->
+          </div>
+          <p>Total: <span id="total">0</span>$</p>
+          <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+          
+          <script>
+          // Datos de los productos (podrían venir de una base de datos)
+          const productos = [
+            { id: 1, nombre: 'Producto 1', precio: 10 },
+            { id: 2, nombre: 'Producto 2', precio: 20 },
+            // Añade más productos según sea necesario
+          ];
+          
+          let carrito = [];
+          
+          function agregarAlCarrito(id) {
+            // Encuentra el producto por su id
+            const producto = productos.find(p => p.id === id);
+            // Agrega el producto al carrito
+            carrito.push(producto);
+            // Actualiza la visualización del carrito
+            mostrarCarrito();
+          }
+          
+          function mostrarCarrito() {
+            const contenedor = document.getElementById('carrito');
+            contenedor.innerHTML = '';
+            carrito.forEach(producto => {
+              contenedor.innerHTML += `<div>${producto.nombre} - ${producto.precio}$</div>`;
+            });
+            // Actualiza el total
+            document.getElementById('total').textContent = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+          }
+          
+          function vaciarCarrito() {
+            carrito = [];
+            mostrarCarrito();
+          }
+          
+          // Genera la lista de productos en la página
+          function generarProductos() {
+            const contenedor = document.getElementById('lista-productos');
+            productos.forEach(producto => {
+              contenedor.innerHTML += `
+                <div class="producto">
+                  <div>${producto.nombre}</div>
+                  <div>Precio: ${producto.precio}€</div>
+                  <button onclick="agregarAlCarrito(${producto.id})">Agregar al Carrito</button>
+                </div>
+              `;
+            });
+          }
+          
+          // Inicializa la lista de productos al cargar la página
+          window.onload = generarProductos;
+          </script>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Tu Tienda de Videojuegos GameZone</p>
+            <nav>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
