@@ -17,7 +17,7 @@ body {
 /* Estilos del encabezado */
 
 header {
-    background-color: #333;
+    background-image: url(Img/fondo.jpeg);
     color: #fff;
     padding: 20px 0;
     width: 100%;
@@ -114,6 +114,8 @@ main {
 .producto h3 {
     margin: 10px 0;
 }
+
+
 
 .producto p {
     margin: 10px 0;
@@ -247,5 +249,15 @@ footer nav ul li a:hover {
     .producto {
         flex: 1 1 100%;
     }
+}
+
+.image-container {
+    text-align: center;
+}
+
+/* Establece el tamaño máximo de la imagen */
+.image-container img {
+    max-width: 50%;  /* Puedes ajustar el porcentaje según tus necesidades */
+    height: auto;   /* Mantiene la proporción de la imagen */
 }
 
