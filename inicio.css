@@ -123,7 +123,7 @@ main {
 
 .producto .precio {
     font-weight: bold;
-    color: #e74c3c;
+    color: #030303;
 }
 
 .producto button {
@@ -138,13 +138,14 @@ main {
 
 /* Pseudo-clase para cambiar el color de fondo del botón al pasar el ratón */
 .producto button:hover {
-    background-color: #555;
+    background-color: #e50b0b;
 }
 
 /* Estilos del pie de página */
 
 footer {
-    background-color: #333;
+    
+    background-image: url(Img/fondo.jpeg);
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -178,7 +179,7 @@ footer nav ul li a {
 
 /* Pseudo-clase para cambiar el color del enlace al pasar el ratón */
 footer nav ul li a:hover {
-    color: #e74c3c;
+    color: #3ce77e;
 }
 
 /* Media Queries para hacer la página responsive */
@@ -255,9 +256,22 @@ footer nav ul li a:hover {
     text-align: center;
 }
 
-/* Establece el tamaño máximo de la imagen */
+
 .image-container img {
-    max-width: 50%;  /* Puedes ajustar el porcentaje según tus necesidades */
-    height: auto;   /* Mantiene la proporción de la imagen */
+    max-width: 50%; 
+    height: auto;   
+
 }
+
+@keyframes miAnimacion {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.image-container {
+    animation: miAnimacion 1s ease-in-out forwards;
+}
+
+
+ 
 
